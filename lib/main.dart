@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
 
-    Future.delayed(Duration(milliseconds: 3500),
+    Future.delayed(Duration(milliseconds: 5000),
         () => safeSetState(() => _appStateNotifier.stopShowingSplashImage()));
   }
 
@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Sabor Local',
+      title: 'TesteSaborLOcaal ',
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

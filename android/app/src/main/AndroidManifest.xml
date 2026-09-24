@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mycompany.saborlocal"
+    package="com.mycompany.testesaborlocaal"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <application
-        android:label="Sabor Local"
+        android:label="TesteSaborLOcaal "
         tools:replace="android:label"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
@@ -45,7 +45,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="saborlocal" android:host="saborlocal.com" />
+                <data android:scheme="testesaborlocaal" android:host="testesaborlocaal.com" />
             </intent-filter>
 
         </activity>

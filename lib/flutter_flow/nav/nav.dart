@@ -38,12 +38,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context) => Container(
                 color: Colors.transparent,
                 child: Image.asset(
-                  'assets/images/Gemini_Generated_Image_vns8mpvns8mpvns8.jpg',
+                  'assets/images/SplashSaborLocaal.png',
                   fit: BoxFit.cover,
                 ),
               ),
             )
-          : HomePageWidget(),
+          : LoguinWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
@@ -53,62 +53,62 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   builder: (context) => Container(
                     color: Colors.transparent,
                     child: Image.asset(
-                      'assets/images/Gemini_Generated_Image_vns8mpvns8mpvns8.jpg',
+                      'assets/images/SplashSaborLocaal.png',
                       fit: BoxFit.cover,
                     ),
                   ),
                 )
-              : HomePageWidget(),
+              : LoguinWidget(),
         ),
         FFRoute(
-          name: HomePageWidget.routeName,
-          path: HomePageWidget.routePath,
-          builder: (context, params) => HomePageWidget(),
+          name: LoguinWidget.routeName,
+          path: LoguinWidget.routePath,
+          builder: (context, params) => LoguinWidget(),
         ),
         FFRoute(
-          name: EsqueciSenhaPageWidget.routeName,
-          path: EsqueciSenhaPageWidget.routePath,
-          builder: (context, params) => EsqueciSenhaPageWidget(),
+          name: CadastroWidget.routeName,
+          path: CadastroWidget.routePath,
+          builder: (context, params) => CadastroWidget(),
         ),
         FFRoute(
-          name: CodigoEsqSenPageWidget.routeName,
-          path: CodigoEsqSenPageWidget.routePath,
-          builder: (context, params) => CodigoEsqSenPageWidget(),
+          name: EsqueciSenhaWidget.routeName,
+          path: EsqueciSenhaWidget.routePath,
+          builder: (context, params) => EsqueciSenhaWidget(),
         ),
         FFRoute(
-          name: RedefSenhaPageWidget.routeName,
-          path: RedefSenhaPageWidget.routePath,
-          builder: (context, params) => RedefSenhaPageWidget(),
+          name: VerificacaoCadWidget.routeName,
+          path: VerificacaoCadWidget.routePath,
+          builder: (context, params) => VerificacaoCadWidget(),
         ),
         FFRoute(
-          name: SenhaRedefinidaPageWidget.routeName,
-          path: SenhaRedefinidaPageWidget.routePath,
-          builder: (context, params) => SenhaRedefinidaPageWidget(),
+          name: ConfSenhaWidget.routeName,
+          path: ConfSenhaWidget.routePath,
+          builder: (context, params) => ConfSenhaWidget(),
         ),
         FFRoute(
-          name: InicialPageWidget.routeName,
-          path: InicialPageWidget.routePath,
-          builder: (context, params) => InicialPageWidget(),
+          name: AltSenhaWidget.routeName,
+          path: AltSenhaWidget.routePath,
+          builder: (context, params) => AltSenhaWidget(),
         ),
         FFRoute(
-          name: CodigoCadPageWidget.routeName,
-          path: CodigoCadPageWidget.routePath,
-          builder: (context, params) => CodigoCadPageWidget(),
+          name: HomeWidget.routeName,
+          path: HomeWidget.routePath,
+          builder: (context, params) => HomeWidget(),
         ),
         FFRoute(
-          name: ContaCriadaPageWidget.routeName,
-          path: ContaCriadaPageWidget.routePath,
-          builder: (context, params) => ContaCriadaPageWidget(),
+          name: CadEnderecoWidget.routeName,
+          path: CadEnderecoWidget.routePath,
+          builder: (context, params) => CadEnderecoWidget(),
         ),
         FFRoute(
-          name: CadastroEnderecoWidget.routeName,
-          path: CadastroEnderecoWidget.routePath,
-          builder: (context, params) => CadastroEnderecoWidget(),
+          name: VerificacaoCodSenhaWidget.routeName,
+          path: VerificacaoCodSenhaWidget.routePath,
+          builder: (context, params) => VerificacaoCodSenhaWidget(),
         ),
         FFRoute(
-          name: CadastroPageWidget.routeName,
-          path: CadastroPageWidget.routePath,
-          builder: (context, params) => CadastroPageWidget(),
+          name: TesteWidget.routeName,
+          path: TesteWidget.routePath,
+          builder: (context, params) => TesteWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

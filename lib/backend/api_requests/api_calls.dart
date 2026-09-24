@@ -36,14 +36,65 @@ class BuscarCEPCall {
         response,
         r'''$.bairro''',
       ));
-  static String? cidade(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.localidade''',
-      ));
-  static String? uf(dynamic response) => castToType<String>(getJsonField(
-        response,
-        r'''$.uf''',
-      ));
+}
+
+class CadastrarCall {
+  static Future<ApiCallResponse> call({
+    String? nome = '',
+    String? endereco = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "nome": "${escapeStringForJson(nome)}",
+  "endereco": "${escapeStringForJson(endereco)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Cadastrar',
+      apiUrl: 'https://x8ki-letl-twmt.n7.xano.io/api:5kNWspXF/cadastraram',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
+}
+
+class AtualizarCall {
+  static Future<ApiCallResponse> call({
+    int? cadastraramId,
+    String? nome = '',
+    String? endereco = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "cadastraram_id": "${cadastraramId}",
+  "nome": "${escapeStringForJson(nome)}",
+  "endereco": "${escapeStringForJson(endereco)}"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Atualizar',
+      apiUrl:
+          'https://x8ki-letl-twmt.n7.xano.io/api:5kNWspXF/cadastraram/${cadastraramId}',
+      callType: ApiCallType.PATCH,
+      headers: {},
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      isStreamingApi: false,
+      alwaysAllowBody: false,
+    );
+  }
 }
 
 class ApiPagingParams {
@@ -88,4 +139,15 @@ String _serializeJson(dynamic jsonVar, [bool isList = false]) {
     }
     return isList ? '[]' : '{}';
   }
+}
+
+String? escapeStringForJson(String? input) {
+  if (input == null) {
+    return null;
+  }
+  return input
+      .replaceAll('\\', '\\\\')
+      .replaceAll('"', '\\"')
+      .replaceAll('\n', '\\n')
+      .replaceAll('\t', '\\t');
 }
